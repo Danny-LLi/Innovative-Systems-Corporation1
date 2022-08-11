@@ -19,7 +19,7 @@
       <img style="height:700px;"src="img/person_1.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img style="height:700px;"src="img/person_2.jpg" class="d-block w-100" alt="...">
+      <img style="height:700px;"src="img/person_2.jpg" class="d-block w-100" alt="..." onload="imgloaded()">
     </div>
     
   </div>
@@ -107,6 +107,11 @@ window.addEventListener('resize', () => {
 })
 
 // End of Navigation</script>
+<script>
+function imgloaded(){
+
+    alert("site loaded");
+}</script>
 </body>
 
 </html>

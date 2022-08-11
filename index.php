@@ -7,6 +7,7 @@
     <title>Send Money, Pay Online, or Set Up a Merchant Account.</title>
     <link rel="stylesheet" type="text/css" href="css/style1.css? <?php echo time(); ?> "/>
     <link rel="stylesheet" href="css/style3.css">
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <!-- CSS only -->
 <!-- JavaScript Bundle with Popper -->
     
@@ -104,7 +105,7 @@
                         gateway.</br>Your security is important to us.</p>
                     <a href="/github/Renewable-Systems-Corporation1/learnmore"><button class="blue-btn">Learn More</button></a>
                     <a href="/github/Renewable-Systems-Corporation1/developers"><button class="blue-btn">Developers</button></a>
-
+                    <button  class="blue-btn" onclick="process(event)"> Who we are</button>
 
                 </div>
             </section>
@@ -113,6 +114,9 @@
             <!-- Section 2 -->
             <section class="section-2">
                 <h1 class="section-2-heading">PaymentGateway is for everyone who pays or gets paid</h1>
+                <button class="blue-btn"onclick="hithere()">:)</button>
+                <h2 id="32532fgds"></h2>
+                <button style="margin-top:20px;"class="blue-btn"onclick="ourteam()">Our Team</button>
                 <div class="services">
                     <div class="service">
                         <i class="fas fa-user-tie"></i>
@@ -170,7 +174,7 @@
                 <h1 class="section-4-heading">Get started with PaymentGateway.</h1>
                 <div class="section-4-content">
                     <div class="section-4-img-wrapper">
-                        <img src="img/macbook.png">
+                        <img src="img/macbook.png" onload="loadImage()">
                     </div>
                     <ul class="section-4-list">
                         <li class="section-4-list-item">
@@ -286,6 +290,46 @@ window.addEventListener('resize', () => {
 })
 
 // End of Navigation</script>
+<script>function process(event) {
+            
+            event.preventDefault();
+            alert("We are a team of developers");
+            
+            }
+
+            </script>
+<script>            
+function loadImage() {
+ console.log("hi there");
+}
+function hithere(){
+    const box = document.getElementById('32532fgds');
+    box.innerHTML = `:)`;
+
+    }
+    function ourteam(){
+var val1 = "val1";
+        $.ajax({
+                        url: '/github/Renewable-Systems-Corporation1/ourteam.php',
+                        type: 'post',
+                        data: {val1},
+                        dataType: 'JSON',
+                        success:function(response){
+                var name = response.name;
+                var name = response.team;
+                if(name === "Done"){
+alert(team);
+                }
+                else{alert(name);}
+                },
+                        error:function(){
+                            alert("There is something wrong please try again"); 
+                        }
+                    
+
+                    });
+    }
+</script>
 </body>
 
 </html>
